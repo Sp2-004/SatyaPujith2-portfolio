@@ -17,19 +17,7 @@ const Experience = () => {
       ],
       technologies: ["React", "Node.js", "AI/ML", "JavaScript", "REST APIs"]
     },
-    {
-      title: "Full-Stack Developer",
-      company: "Personal Projects",
-      location: "Hyderabad, India",
-      period: "2024 - Present",
-      description: [
-        "Developed multiple full-stack applications using Vue.js, React, and Laravel",
-        "Built EV charging station management system with real-time mapping",
-        "Created dual-role platform for audition management with location-based services",
-        "Implemented secure authentication systems and CORS configuration"
-      ],
-      technologies: ["Vue.js", "React", "Laravel", "MongoDB", "PostgreSQL", "Google Maps API"]
-    },
+    
   ];
 
   return (
