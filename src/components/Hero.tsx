@@ -102,7 +102,7 @@ const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(14, 165, 233, 0.5)" }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+            className="gradient-button flex items-center gap-2"
           >
             <a
   href="/satyapujith_resume latex updated.pdf"
@@ -119,7 +119,7 @@ const Hero = () => {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 glass-effect rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
+            className="outline-button flex items-center gap-2"
           >
             <Mail size={20} />
             Get In Touch
@@ -145,7 +145,7 @@ const Hero = () => {
               href={social.href}
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 glass-effect rounded-full hover:bg-white/20 transition-all duration-300 group"
+              className="p-3 glass-effect rounded-xl hover:bg-primary-500/20 hover:border-primary-500/30 transition-all duration-300 group"
             >
               <social.icon className="w-6 h-6 text-gray-300 group-hover:text-primary-400 transition-colors duration-300" />
             </motion.a>

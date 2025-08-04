@@ -52,7 +52,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-6 text-primary-400">My Journey</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Currently pursuing B.Tech in Computer Science with Data Science specialization at 
@@ -74,7 +74,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="glass-effect rounded-2xl p-8 relative overflow-hidden">
+            <div className="glass-card rounded-2xl p-8 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-6 text-accent-400">Quick Facts</h3>
@@ -111,7 +111,7 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               className="tech-card text-center group"
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold mb-3 text-white">{feature.title}</h4>

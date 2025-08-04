@@ -98,7 +98,7 @@ const Projects = () => {
                       href={project.live}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-3 bg-primary-500 rounded-full text-white hover:bg-primary-600 transition-colors duration-200"
+                      className="p-3 bg-primary-600 rounded-xl text-white hover:bg-primary-700 transition-colors duration-200 shadow-lg"
                     >
                       <Eye className="w-5 h-5" />
                     </motion.a>
@@ -106,7 +106,7 @@ const Projects = () => {
                       href={project.github}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-3 bg-gray-700 rounded-full text-white hover:bg-gray-600 transition-colors duration-200"
+                      className="p-3 bg-accent-700 rounded-xl text-white hover:bg-accent-600 transition-colors duration-200 shadow-lg"
                     >
                       <Github className="w-5 h-5" />
                     </motion.a>
@@ -134,7 +134,7 @@ const Projects = () => {
                     href={project.live}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg text-white font-medium hover:shadow-lg transition-all duration-200"
+                    className="gradient-button flex items-center gap-2"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
@@ -143,7 +143,7 @@ const Projects = () => {
                     href={project.github}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 glass-effect rounded-lg text-white font-medium hover:bg-white/20 transition-all duration-200"
+                    className="outline-button flex items-center gap-2"
                   >
                     <Github className="w-4 h-4" />
                     Code
@@ -176,7 +176,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              className="glass-card rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
             >
               <img
                 src={project.image}
@@ -191,13 +191,13 @@ const Projects = () => {
                 {project.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-primary-500/20 text-primary-300 rounded text-xs"
+                    className="px-2 py-1 bg-primary-500/20 text-primary-300 rounded-md text-xs border border-primary-500/20"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="px-2 py-1 bg-gray-500/20 text-gray-400 rounded text-xs">
+                  <span className="px-2 py-1 bg-accent-500/20 text-accent-400 rounded-md text-xs border border-accent-500/20">
                     +{project.technologies.length - 3}
                   </span>
                 )}

@@ -55,7 +55,7 @@ const Experience = () => {
               {/* Timeline dot */}
               <div className="absolute -left-20 top-6 w-4 h-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full border-4 border-slate-900"></div>
 
-              <div className="glass-effect rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+              <div className="glass-card rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
@@ -89,7 +89,7 @@ const Experience = () => {
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-300 rounded-full text-sm border border-primary-500/30"
+                      className="px-3 py-1 bg-primary-500/20 text-primary-300 rounded-full text-sm border border-primary-500/30 backdrop-blur-sm"
                     >
                       {tech}
                     </span>
@@ -107,7 +107,7 @@ const Experience = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="glass-effect rounded-2xl p-8">
+          <div className="glass-card rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-4 gradient-text">Ready for New Challenges</h3>
             <p className="text-gray-300 leading-relaxed">
               I'm always excited about new opportunities to work on innovative projects 

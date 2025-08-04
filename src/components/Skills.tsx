@@ -65,7 +65,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="glass-effect rounded-2xl p-8"
+              className="glass-card rounded-2xl p-8"
             >
               <h3 className="text-2xl font-bold mb-8 text-center">
                 <span className="gradient-text">{category.title}</span>
@@ -85,15 +85,15 @@ const Skills = () => {
                       <span className="text-gray-400 text-sm">{skill.level}%</span>
                     </div>
                     
-                    <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
+                    <div className="skill-bar">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.3 }}
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
+                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative shadow-sm`}
                       >
-                        <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -110,7 +110,7 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="glass-card rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-6 gradient-text">Always Learning</h3>
             <p className="text-gray-300 leading-relaxed">
               The tech world evolves rapidly, and I'm committed to staying ahead of the curve. 

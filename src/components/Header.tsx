@@ -28,7 +28,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass-effect shadow-2xl' : 'bg-transparent'
+        scrolled ? 'glass-card shadow-2xl border-b border-white/10' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
@@ -49,7 +49,7 @@ const Header = () => {
                 href={item.href}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-primary-500/10"
               >
                 {item.label}
               </motion.a>
@@ -72,7 +72,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 glass-effect rounded-lg p-4"
+            className="md:hidden mt-4 glass-card rounded-xl p-4"
           >
             {navItems.map((item) => (
               <motion.a
@@ -80,7 +80,7 @@ const Header = () => {
                 href={item.href}
                 whileHover={{ x: 10 }}
                 onClick={() => setIsOpen(false)}
-                className="block py-2 text-gray-300 hover:text-primary-400 transition-colors duration-200"
+                className="block py-3 px-4 text-gray-300 hover:text-primary-400 transition-colors duration-200 rounded-lg hover:bg-primary-500/10"
               >
                 {item.label}
               </motion.a>

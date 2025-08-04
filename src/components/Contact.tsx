@@ -95,7 +95,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-effect rounded-2xl p-8"
+            className="glass-card rounded-2xl p-8"
           >
             <h3 className="text-2xl font-bold mb-8 gradient-text">Send a Message</h3>
             
@@ -112,7 +112,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="contact-input"
                     placeholder="Your Name"
                   />
                 </div>
@@ -127,7 +127,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="contact-input"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                  className="contact-input"
                   placeholder="Project Discussion"
                 />
               </div>
@@ -160,7 +160,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                  className="contact-input resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full gradient-button flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -185,7 +185,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-8 gradient-text">Contact Information</h3>
               
               <div className="space-y-6">
@@ -198,9 +198,9 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-primary-500/10 hover:border hover:border-primary-500/20 transition-all duration-200 group backdrop-blur-sm"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -212,7 +212,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-8 gradient-text">Follow Me</h3>
               
               <div className="flex gap-4">
@@ -226,7 +226,7 @@ const Contact = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200"
+                    className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center hover:shadow-lg transition-all duration-200 shadow-md"
                   >
                     <social.icon className="w-6 h-6 text-white" />
                   </motion.a>
@@ -234,7 +234,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Let's Collaborate</h3>
               <p className="text-gray-300 leading-relaxed">
                 I'm always excited to work on innovative projects and collaborate with 
