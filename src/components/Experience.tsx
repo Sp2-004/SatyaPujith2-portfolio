@@ -68,7 +68,6 @@ const Experience = () => {
   rel="noopener noreferrer" 
   className="flex items-center gap-1 text-blue-500 hover:underline"
 >
-  <span>Live Demo</span>
   <ExternalLink className="w-4 h-4" />
 </a>
 
