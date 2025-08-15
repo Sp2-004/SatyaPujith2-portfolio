@@ -4,6 +4,15 @@ import { ExternalLink, Github, Eye } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
+     {
+  title: "Carsor AI - Vehicle Diagnostics Platform",
+  description: "An AI-powered platform for Tata vehicle diagnostics and assistance, featuring voice, text, and image-based issue reporting with RAG-based Gemini AI, repair history tracking, analytics, and real-time sharing with service providers.",
+  image: "https://www.shutterstock.com/image-photo/smart-car-service-diagnostics-software-600nw-2337506921.jpg",
+  technologies: ["Next.js", "Gemini AI (RAG)", "MongoDB", "Voice/Text/Image Processing", "Analytics"],
+  github: "https://github.com/SatyaPujith/c-carsor",
+  live: "https://carsor-c.vercel.app",
+  featured: true
+}
     {
       title: "Charging Stations Management",
       description: "A full-stack web application for managing electric vehicle charging stations with real-time mapping, authentication, and secure cross-origin requests using CORS configuration.",
@@ -22,13 +31,13 @@ const Projects = () => {
       live: "https://star-nova-three.vercel.app",
       featured: true
     },
+    
     {
       title: "Eco Route System",
       description: "A full-stack application to calculate and display eco-scores for travel routes, featuring location-based services and real-time mapping with Google Maps API integration.",
       image: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["PHP Laravel", "Laravel Blade", "MySQL", "Google Maps API"],
       github: "https://github.com/SatyaPujith/eco-route-system",
-      live: "#",
       featured: false
     },
     {
@@ -37,19 +46,27 @@ const Projects = () => {
       image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Node.js", "SQLite", "eBay Sandbox Finding API"],
       github: "https://github.com/SatyaPujith/E-commerce-Sales-Chatbot-eBay-",
-      live: "#",
       featured: false
     },
     {
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website showcasing projects and skills with advanced animations, glassmorphism effects, and particle background.",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/SatyaPujith",
-      live: "#",
-      featured: false
-    },
+  title: "Fashion Fusion - Outfit Matching & Community Platform",
+  description: "A fashion web app built with React and Node.js that allows users to upload multiple tops and bottoms, discover the top 3 best outfit matches, interact in an Instagram-style community, and receive real-time fashion suggestions based on location and regional trends.",
+  image: "https://brandyuva.shop/wp-content/uploads/2024/04/IMG_20240421_111125-1.png",
+  technologies: ["React", "Node.js", "Maps API", "Image Upload"],
+  github: "https://github.com/SatyaPujith/fashion-fusion",
+  featured: false
+}
+{
+  title: "Promotional Banner App",
+  description: "Customized a Shopify app built with Node.js and React by integrating a dynamic promotional banner feature using Polaris components and App Bridge. Enhanced the frontend with responsive UI and ensured smooth API communication with the Shopify Admin API.",
+  image: "https://www.searchenginejournal.com/wp-content/uploads/2022/07/shopify-store-examples-62d01563935c4-sej.png", 
+  technologies: ["Node.js", "React", "Express", "Vite", "Shopify API", "Polaris", "App Bridge"],
+  github: "https://github.com/SatyaPujith/promotional-banner-app",
+  live: "https://satyapujith.myshopify.com",
+  featured: false
+}
 
+    
   ];
 
   const featuredProjects = projects.filter(p => p.featured);
