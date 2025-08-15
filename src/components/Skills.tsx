@@ -21,15 +21,13 @@ const Skills = () => {
         { name: "Python", level: 80, color: "from-yellow-400 to-yellow-600" },
         { name: "Java", level: 75, color: "from-orange-400 to-orange-600" },
         { name: "MySQL", level: 88, color: "from-blue-600 to-blue-800" },
-        { name: "MongoDB", level: 82, color: "from-green-500 to-green-700" },
-        { name: "PostgreSQL", level: 80, color: "from-indigo-400 to-indigo-600" }
+        { name: "MongoDB", level: 82, color: "from-green-500 to-green-700" }
       ]
     },
     {
       title: "Tools & Others",
       skills: [
         { name: "Git & GitHub", level: 90, color: "from-orange-400 to-orange-600" },
-        { name: "VS Code", level: 95, color: "from-blue-400 to-blue-600" },
         { name: "Postman", level: 85, color: "from-orange-500 to-red-500" },
         { name: "REST APIs", level: 88, color: "from-green-400 to-green-600" },
         { name: "Figma", level: 88, color: "from-purple-400 to-purple-600" },
