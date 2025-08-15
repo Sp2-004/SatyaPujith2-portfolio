@@ -62,7 +62,16 @@ const Experience = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
                     <div className="flex items-center gap-4 text-primary-400 mb-2">
                       <span className="font-semibold">{exp.company}</span>
-                      <ExternalLink className="w-4 h-4" />
+                      <a 
+  href="https://iare.ac.in" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="flex items-center gap-1 text-blue-500 hover:underline"
+>
+  <span>Live Demo</span>
+  <ExternalLink className="w-4 h-4" />
+</a>
+
                     </div>
                   </div>
                   <div className="flex flex-col md:items-end gap-2">
