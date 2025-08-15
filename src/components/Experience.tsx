@@ -5,17 +5,18 @@ import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "AI Creator Program Intern",
-      company: "Swecha Telangana",
-      location: "Remote",
-      period: "Aug 2024",
+      title: "Summer Research Intern",
+      company: "Institute of Aeronautical Engineering",
+      location: "Hyderabad, Telangana",
+      period: "May 2025 – Jun 2025",
       description: [
-        "Developed an AI chatbot for cultural and language preservation",
-        "Built a web application using React and Node.js for AI integration",
-        "Collaborated in a multidisciplinary team to design conversational AI features",
-        "Implemented real-time chat functionality and AI response systems"
+  "Primary author of Smart HealthGuard, an AI-powered drug interaction checker",
+  "Developed a Flask-based web tool with Tailwind CSS and SQLite backend",
+  "Trained a Random Forest model (84% accuracy) using a dataset of 56,368 DDI records",
+  "Implemented SMOTE, custom encoders, and RxNorm API integration for predictions"
       ],
-      technologies: ["React", "Node.js", "AI/ML", "JavaScript", "REST APIs"]
+    technologies: ["Flask", "SQLite", "Tailwind CSS", "Python", "Random Forest", "SMOTE", "RxNorm API"]
+
     },
     
   ];
