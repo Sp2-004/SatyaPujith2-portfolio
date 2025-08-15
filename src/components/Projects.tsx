@@ -12,7 +12,7 @@ const Projects = () => {
   github: "https://github.com/SatyaPujith/c-carsor",
   live: "https://carsor-c.vercel.app",
   featured: true
-}
+},
     {
       title: "Charging Stations Management",
       description: "A full-stack web application for managing electric vehicle charging stations with real-time mapping, authentication, and secure cross-origin requests using CORS configuration.",
@@ -55,7 +55,7 @@ const Projects = () => {
   technologies: ["React", "Node.js", "Maps API", "Image Upload"],
   github: "https://github.com/SatyaPujith/fashion-fusion",
   featured: false
-}
+},
 {
   title: "Promotional Banner App",
   description: "Customized a Shopify app built with Node.js and React by integrating a dynamic promotional banner feature using Polaris components and App Bridge. Enhanced the frontend with responsive UI and ensured smooth API communication with the Shopify Admin API.",
@@ -64,7 +64,7 @@ const Projects = () => {
   github: "https://github.com/SatyaPujith/promotional-banner-app",
   live: "https://satyapujith.myshopify.com",
   featured: false
-}
+},
 
     
   ];
