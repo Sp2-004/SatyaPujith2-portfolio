@@ -62,7 +62,6 @@ const Projects = () => {
   image: "https://www.searchenginejournal.com/wp-content/uploads/2022/07/shopify-store-examples-62d01563935c4-sej.png", 
   technologies: ["Node.js", "React", "Express", "Vite", "Shopify API", "Polaris", "App Bridge"],
   github: "https://github.com/SatyaPujith/promotional-banner-app",
-  live: "https://satyapujith.myshopify.com",
   featured: false
 },
 
@@ -226,8 +225,7 @@ const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-1 text-primary-400 hover:text-primary-300 text-sm"
                 >
-                  <ExternalLink className="w-3 h-3" />
-                  Live
+                  
                 </motion.a>
                 <motion.a
                   href={project.github}
