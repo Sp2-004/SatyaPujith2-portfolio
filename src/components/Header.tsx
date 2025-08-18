@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,30 +28,32 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass-card shadow-2xl border-b border-white/10' : 'bg-transparent'
+        scrolled ? 'bg-dark-950/80 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <Code2 className="w-8 h-8 text-primary-400" />
-            <span className="text-xl font-bold gradient-text">Satya Pujith</span>
+            <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+              <span className="text-black font-bold text-lg">S</span>
+            </div>
+            <span className="text-2xl font-bold font-space-grotesk">Satya Pujith</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <motion.a
                 key={item.href}
                 href={item.href}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-primary-500/10"
+                whileHover={{ y: -2 }}
+                className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium text-lg relative group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </div>
@@ -60,9 +62,9 @@ const Header = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-white p-2"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </motion.button>
         </div>
 
@@ -72,7 +74,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 glass-card rounded-xl p-4"
+            className="md:hidden mt-6 bg-dark-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10"
           >
             {navItems.map((item) => (
               <motion.a
@@ -80,7 +82,7 @@ const Header = () => {
                 href={item.href}
                 whileHover={{ x: 10 }}
                 onClick={() => setIsOpen(false)}
-                className="block py-3 px-4 text-gray-300 hover:text-primary-400 transition-colors duration-200 rounded-lg hover:bg-primary-500/10"
+                className="block py-4 px-4 text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-lg font-medium"
               >
                 {item.label}
               </motion.a>

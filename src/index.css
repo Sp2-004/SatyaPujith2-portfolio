@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,8 +11,10 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 70%, #475569 100%);
+    background: #0a0a0a;
+    color: #ffffff;
     min-height: 100vh;
+    overflow-x: hidden;
   }
 }
 
@@ -20,57 +24,92 @@
   }
   
   .glass-card {
-    @apply backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-2xl;
+    @apply backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent;
   }
   
   .gradient-button {
-    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-medium px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
   }
   
   .outline-button {
-    @apply border-2 border-primary-500/50 text-primary-400 hover:bg-primary-500/10 hover:border-primary-400 px-6 py-3 rounded-xl font-medium transition-all duration-300 backdrop-blur-sm;
+    @apply border-2 border-yellow-400/50 text-yellow-400 hover:bg-yellow-400/10 hover:border-yellow-400 px-8 py-4 rounded-full font-medium transition-all duration-300 backdrop-blur-sm;
   }
   
   .tech-card {
-    @apply glass-card rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    @apply glass-card rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
   
   .project-card {
-    @apply glass-card rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl;
+    @apply glass-card rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl;
   }
   
   .skill-bar {
-    @apply w-full bg-accent-800/30 rounded-full h-2 overflow-hidden backdrop-blur-sm;
+    @apply w-full bg-white/10 rounded-full h-1 overflow-hidden backdrop-blur-sm;
   }
   
   .contact-input {
-    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 transition-all duration-200 backdrop-blur-sm;
+    @apply w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50 transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .section-padding {
+    @apply py-32 px-6;
+  }
+
+  .container-custom {
+    @apply container mx-auto max-w-7xl;
+  }
+
+  .heading-primary {
+    @apply text-6xl md:text-8xl font-bold mb-8 font-space-grotesk;
+  }
+
+  .heading-secondary {
+    @apply text-4xl md:text-6xl font-bold mb-12 font-space-grotesk;
+  }
+
+  .text-body {
+    @apply text-lg md:text-xl text-gray-300 leading-relaxed;
+  }
+
+  .curved-line {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(90deg, transparent, #facc15, transparent);
+    border-radius: 50%;
+    filter: blur(1px);
+    opacity: 0.3;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #0ea5e9, #0284c7);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #facc15, #eab308);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #0284c7, #075985);
+  background: linear-gradient(135deg, #eab308, #ca8a04);
 }
 
 /* Smooth animations */
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom font classes */
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
 }

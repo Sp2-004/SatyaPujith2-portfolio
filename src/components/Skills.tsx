@@ -37,39 +37,40 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gradient-to-b from-transparent to-slate-900/20">
-      <div className="container mx-auto max-w-6xl">
+    <section id="skills" className="section-padding bg-gradient-to-b from-dark-900/30 to-transparent">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="heading-secondary">
             <span className="gradient-text">Skills & Expertise</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mb-8"></div>
+          <p className="text-body max-w-4xl mx-auto">
             A comprehensive toolkit of modern technologies and frameworks that I use to build 
             exceptional digital experiences.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-12">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="glass-card rounded-2xl p-8"
+              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+              className="bg-white/5 rounded-3xl p-10 border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold mb-8 text-center">
+              <h3 className="text-3xl font-bold mb-10 text-center font-space-grotesk">
                 <span className="gradient-text">{category.title}</span>
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -78,9 +79,9 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) }}
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <span className="text-gray-400 text-sm">{skill.level}%</span>
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-white font-medium text-lg">{skill.name}</span>
+                      <span className="text-yellow-400 text-sm font-bold">{skill.level}%</span>
                     </div>
                     
                     <div className="skill-bar">
@@ -88,10 +89,10 @@ const Skills = () => {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.3 }}
+                        transition={{ duration: 1.5, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.3 }}
                         className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative shadow-sm`}
                       >
-                        <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full"></div>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -105,12 +106,12 @@ const Skills = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-20 text-center"
         >
-          <div className="glass-card rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Always Learning</h3>
-            <p className="text-gray-300 leading-relaxed">
+          <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-500/5 rounded-3xl p-12 max-w-5xl mx-auto border border-yellow-400/20 backdrop-blur-xl">
+            <h3 className="text-3xl font-bold mb-6 gradient-text font-space-grotesk">Always Learning</h3>
+            <p className="text-body">
               The tech world evolves rapidly, and I'm committed to staying ahead of the curve. 
               Currently exploring AI/ML integration in web applications, Web3 technologies, 
               and advanced performance optimization techniques. I believe that continuous learning 

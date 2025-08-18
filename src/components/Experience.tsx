@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink, Briefcase } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -10,39 +10,38 @@ const Experience = () => {
       location: "Hyderabad, Telangana",
       period: "May 2025 – Jun 2025",
       description: [
-  "Primary author of Smart HealthGuard, an AI-powered drug interaction checker",
-  "Developed a Flask-based web tool with Tailwind CSS and SQLite backend",
-  "Trained a Random Forest model (84% accuracy) using a dataset of 56,368 DDI records",
-  "Implemented SMOTE, custom encoders, and RxNorm API integration for predictions"
+        "Primary author of Smart HealthGuard, an AI-powered drug interaction checker",
+        "Developed a Flask-based web tool with Tailwind CSS and SQLite backend",
+        "Trained a Random Forest model (84% accuracy) using a dataset of 56,368 DDI records",
+        "Implemented SMOTE, custom encoders, and RxNorm API integration for predictions"
       ],
-    technologies: ["Flask", "SQLite", "Tailwind CSS", "Python", "Random Forest", "SMOTE", "RxNorm API"]
-
+      technologies: ["Flask", "SQLite", "Tailwind CSS", "Python", "Random Forest", "SMOTE", "RxNorm API"]
     },
-    
   ];
 
   return (
-    <section id="experience" className="py-20 px-6">
-      <div className="container mx-auto max-w-4xl">
+    <section id="experience" className="section-padding bg-gradient-to-b from-transparent to-dark-900/30">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="heading-secondary">
             <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mb-8"></div>
+          <p className="text-body max-w-4xl mx-auto">
             A journey through innovative companies where I've contributed to building 
             scalable solutions and leading development teams.
           </p>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative max-w-5xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 to-accent-400"></div>
+          <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-400 to-yellow-500"></div>
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -50,55 +49,56 @@ const Experience = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative mb-12 ml-16"
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="relative mb-16 ml-24"
             >
               {/* Timeline dot */}
-              <div className="absolute -left-20 top-6 w-4 h-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full border-4 border-slate-900"></div>
+              <div className="absolute -left-28 top-8 w-8 h-8 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full border-4 border-dark-950 flex items-center justify-center">
+                <Briefcase className="w-4 h-4 text-black" />
+              </div>
 
-              <div className="glass-card rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div className="bg-white/5 rounded-3xl p-10 hover:bg-white/10 transition-all duration-300 border border-white/10 backdrop-blur-xl">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                    <div className="flex items-center gap-4 text-primary-400 mb-2">
-                      <span className="font-semibold">{exp.company}</span>
+                    <h3 className="text-3xl font-bold text-white mb-3 font-space-grotesk">{exp.title}</h3>
+                    <div className="flex items-center gap-4 text-yellow-400 mb-2">
+                      <span className="font-semibold text-xl">{exp.company}</span>
                       <a 
-  href="https://iare.ac.in" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="flex items-center gap-1 text-blue-500 hover:underline"
->
-  <ExternalLink className="w-4 h-4" />
-</a>
-
+                        href="https://iare.ac.in" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center gap-1 text-yellow-400 hover:text-yellow-300 transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
-                  <div className="flex flex-col md:items-end gap-2">
+                  <div className="flex flex-col lg:items-end gap-3">
                     <div className="flex items-center gap-2 text-gray-400">
-                      <Calendar className="w-4 h-4" />
-                      <span>{exp.period}</span>
+                      <Calendar className="w-5 h-5" />
+                      <span className="text-lg">{exp.period}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-400">
-                      <MapPin className="w-4 h-4" />
-                      <span>{exp.location}</span>
+                      <MapPin className="w-5 h-5" />
+                      <span className="text-lg">{exp.location}</span>
                     </div>
                   </div>
                 </div>
 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-4 mb-8">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="text-gray-300 flex items-start gap-2">
-                      <span className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <li key={i} className="text-gray-300 flex items-start gap-3 text-lg">
+                      <span className="w-2 h-2 bg-yellow-400 rounded-full mt-3 flex-shrink-0"></span>
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-primary-500/20 text-primary-300 rounded-full text-sm border border-primary-500/30 backdrop-blur-sm"
+                      className="px-4 py-2 bg-yellow-400/10 text-yellow-400 rounded-full text-sm border border-yellow-400/30 backdrop-blur-sm font-medium"
                     >
                       {tech}
                     </span>
@@ -113,12 +113,12 @@ const Experience = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-20"
         >
-          <div className="glass-card rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Ready for New Challenges</h3>
-            <p className="text-gray-300 leading-relaxed">
+          <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-500/5 rounded-3xl p-12 max-w-5xl mx-auto border border-yellow-400/20 backdrop-blur-xl">
+            <h3 className="text-3xl font-bold mb-6 gradient-text font-space-grotesk">Ready for New Challenges</h3>
+            <p className="text-body">
               I'm always excited about new opportunities to work on innovative projects 
               and collaborate with talented teams. Let's build something amazing together!
             </p>

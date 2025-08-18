@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const containerVariants = {
@@ -15,80 +15,91 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
+        duration: 0.8,
+        ease: "easeOut"
       }
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-20 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+      <div className="absolute top-40 right-32 w-1 h-1 bg-yellow-400 rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute bottom-32 left-16 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse delay-500"></div>
+      
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-center z-10 px-6"
+        className="text-center z-10 px-6 max-w-6xl mx-auto"
       >
+        <motion.div
+          variants={itemVariants}
+          className="mb-12"
+        >
+          <div className="relative inline-block">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 flex items-center justify-center border border-yellow-400/30"
+            >
+              <img
+                src="./forge image.jpg"
+                alt="Botuku Satya Pujith"
+                className="w-32 h-32 rounded-full object-cover"
+              />
+            </motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute -top-2 -right-2"
+            >
+              <Sparkles className="w-6 h-6 text-yellow-400" />
+            </motion.div>
+          </div>
+        </motion.div>
+
         <motion.div
           variants={itemVariants}
           className="mb-8"
         >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="w-32 h-32 mx-auto mb-8 rounded-full glass-effect flex items-center justify-center"
-          >
-            <img
-              src="./forge image.jpg"
-              alt="Botuku Satya Pujith"
-              className="w-28 h-28 rounded-full object-cover"
-            />
-          </motion.div>
+          <h1 className="heading-primary">
+            <span className="gradient-text">Botuku Satya Pujith</span>
+          </h1>
         </motion.div>
-
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold mb-6"
-        >
-          <span className="gradient-text">Botuku Satya Pujith</span>
-        </motion.h1>
 
         <motion.div
           variants={itemVariants}
-          className="text-xl md:text-2xl text-gray-300 mb-8"
+          className="mb-12"
         >
-          <motion.span
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block"
-          >
-            Full-Stack Developer
-          </motion.span>
-          <span className="mx-4">•</span>
-          <motion.span
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-            className="inline-block"
-          >
-            Data Science Enthusiast
-          </motion.span>
-          <span className="mx-4">•</span>
-          <motion.span
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-            className="inline-block"
-          >
-            AI Developer
-          </motion.span>
+          <div className="text-2xl md:text-4xl text-gray-300 mb-6 font-space-grotesk">
+            <motion.span
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="inline-block"
+            >
+              Full-Stack Developer
+            </motion.span>
+            <span className="mx-6 text-yellow-400">•</span>
+            <motion.span
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              className="inline-block"
+            >
+              Data Science Enthusiast
+            </motion.span>
+          </div>
         </motion.div>
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-body max-w-4xl mx-auto mb-16"
         >
           Passionate and detail-oriented software developer with hands-on experience in building 
           dynamic web applications using JavaScript, PHP, Laravel, and modern frameworks. 
@@ -97,68 +108,62 @@ const Hero = () => {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16"
         >
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(14, 165, 233, 0.5)" }}
+          <motion.a
+            href="/satyapujith_resume latex updated.pdf"
+            download
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="gradient-button flex items-center gap-2"
+            className="gradient-button flex items-center gap-3 text-lg"
           >
-            <a
-  href="/satyapujith_resume latex updated.pdf"
-  download
-  className="flex items-center gap-2 bg-gradient-to-r from-primary-500 to-accent-500 px-4 py-2 rounded-lg text-white font-medium hover:shadow-lg transition-all duration-200"
->
-  <Download size={20} />
-  Download Resume
-</a>
-
-          </motion.button>
+            <Download size={24} />
+            Download Resume
+          </motion.a>
           
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="outline-button flex items-center gap-2"
+            className="outline-button flex items-center gap-3 text-lg"
           >
-            <Mail size={20} />
+            <Mail size={24} />
             Get In Touch
           </motion.a>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-6"
+          className="flex items-center justify-center gap-8"
         >
           {[
             { icon: Github, href: "https://github.com/SatyaPujith", label: "GitHub" },
             { icon: Linkedin, href: "https://linkedin.com/in/botukusatyapujith", label: "LinkedIn" },
             {
-  icon: Mail,
-  href: "mailto:satyapoojith2@gmail.com?subject=Let's%20Connect&body=Hi%20Satya,%20I%20wanted%20to%20reach%20out%20about...",
-  label: "Email"
-}
-
+              icon: Mail,
+              href: "mailto:satyapoojith2@gmail.com?subject=Let's%20Connect&body=Hi%20Satya,%20I%20wanted%20to%20reach%20out%20about...",
+              label: "Email"
+            }
           ].map((social, index) => (
             <motion.a
               key={social.label}
               href={social.href}
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 glass-effect rounded-xl hover:bg-primary-500/20 hover:border-primary-500/30 transition-all duration-300 group"
+              className="p-4 bg-white/5 rounded-2xl hover:bg-yellow-400/10 hover:border-yellow-400/30 transition-all duration-300 group border border-white/10"
             >
-              <social.icon className="w-6 h-6 text-gray-300 group-hover:text-primary-400 transition-colors duration-300" />
+              <social.icon className="w-7 h-7 text-gray-300 group-hover:text-yellow-400 transition-colors duration-300" />
             </motion.a>
           ))}
         </motion.div>
       </motion.div>
 
       <motion.div
-        animate={{ y: [0, 10, 0] }}
+        animate={{ y: [0, 15, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
       >
-        <ArrowDown className="w-6 h-6 text-primary-400" />
+        <ArrowDown className="w-8 h-8 text-yellow-400" />
       </motion.div>
     </section>
   );
