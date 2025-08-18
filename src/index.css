@@ -24,7 +24,7 @@
   }
   
   .glass-card {
-    @apply backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl;
+  @apply backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/20 border border-white/10 shadow-2xl;
   }
   
   .gradient-text {
