@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -69,23 +68,27 @@ const Contact = () => {
     { icon: Twitter, href: "https://x.com/ajajjsnlak", label: "Twitter" }
   ];
 
+  const benefits = [
+    "Quick response within 24 hours",
+    "Free consultation for your project",
+    "Detailed project proposal",
+    "Transparent communication"
+  ];
+
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-transparent to-dark-900/30">
+    <section id="contact" className="section-padding bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="heading-secondary">
-            <span className="gradient-text">Get In Touch</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mb-8"></div>
-          <p className="text-body max-w-4xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project and create 
-            something extraordinary together.
+          <h2 className="heading-secondary">Let's Work Together</h2>
+          <p className="text-body max-w-3xl mx-auto">
+            Ready to bring your ideas to life? I'm here to help you build exceptional 
+            digital experiences. Let's discuss your project and create something amazing together.
           </p>
         </motion.div>
 
@@ -96,20 +99,20 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white/5 rounded-3xl p-10 border border-white/10 backdrop-blur-xl"
+            className="juspay-card p-8"
           >
-            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-black" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                <MessageCircle className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-3xl font-bold gradient-text font-space-grotesk">Send a Message</h3>
+              <h3 className="text-2xl font-bold text-gray-900 font-manrope">Send a Message</h3>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-lg font-medium text-gray-300 mb-3">
-                    Name
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -118,13 +121,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="contact-input"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-lg font-medium text-gray-300 mb-3">
-                    Email
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -133,14 +136,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="contact-input"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-lg font-medium text-gray-300 mb-3">
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
                   Subject
                 </label>
                 <input
@@ -150,13 +153,13 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="contact-input"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                   placeholder="Project Discussion"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-lg font-medium text-gray-300 mb-3">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
@@ -166,7 +169,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="contact-input resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -175,9 +178,9 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full gradient-button flex items-center justify-center gap-3 text-lg"
+                className="w-full juspay-button flex items-center justify-center gap-3"
               >
-                <Send className="w-6 h-6" />
+                <Send className="w-5 h-5" />
                 Send Message
               </motion.button>
             </form>
@@ -191,10 +194,11 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="bg-white/5 rounded-3xl p-10 border border-white/10 backdrop-blur-xl">
-              <h3 className="text-3xl font-bold mb-10 gradient-text font-space-grotesk">Contact Information</h3>
+            {/* Contact Information */}
+            <div className="juspay-card p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 font-manrope">Contact Information</h3>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={info.label}
@@ -204,24 +208,25 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="flex items-center gap-6 p-6 rounded-2xl hover:bg-yellow-400/5 hover:border hover:border-yellow-400/20 transition-all duration-200 group backdrop-blur-sm"
+                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                      <info.icon className="w-8 h-8 text-black" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                      <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm mb-1">{info.label}</p>
-                      <p className="text-white font-medium text-lg">{info.value}</p>
+                      <p className="text-gray-500 text-sm">{info.label}</p>
+                      <p className="text-gray-900 font-medium">{info.value}</p>
                     </div>
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-3xl p-10 border border-white/10 backdrop-blur-xl">
-              <h3 className="text-3xl font-bold mb-10 gradient-text font-space-grotesk">Follow Me</h3>
+            {/* Social Links */}
+            <div className="juspay-card p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 font-manrope">Follow Me</h3>
               
-              <div className="flex gap-6">
+              <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -232,39 +237,36 @@ const Contact = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center hover:shadow-lg transition-all duration-200 shadow-md"
+                    className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-all duration-200"
                   >
-                    <social.icon className="w-8 h-8 text-black" />
+                    <social.icon className="w-6 h-6 text-white" />
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-500/5 rounded-3xl p-10 border border-yellow-400/20 backdrop-blur-xl">
-              <h3 className="text-3xl font-bold mb-6 gradient-text font-space-grotesk">Let's Collaborate</h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                I'm always excited to work on innovative projects and collaborate with 
-                talented individuals and teams. Whether you have a specific project in mind 
-                or just want to explore possibilities, I'd love to hear from you.
-              </p>
+            {/* Benefits */}
+            <div className="juspay-card p-8 bg-gradient-to-br from-blue-50 to-purple-50 border-blue-100">
+              <h3 className="text-2xl font-bold gradient-text mb-6 font-manrope">Why Work With Me?</h3>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <motion.div
+                    key={benefit}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Toast Container for notifications */}
-      <ToastContainer
-        position="top-right"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </section>
   );
 };
